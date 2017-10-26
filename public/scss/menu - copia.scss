@@ -1,0 +1,531 @@
+$cssCore: false;
+$cssHelpers: true;
+$devMode: false;
+@import '../ed-grid';
+body {
+    margin: 0;
+    padding: 0;
+    //background: rgb(0, 0, 0);
+    display: flex;
+    //min-height: 100vh;
+    flex-wrap: wrap;
+}
+
+.header {
+    background: #131519;
+    //height: 160px;
+}
+
+//.active { background-color: #000; }
+// :::::::::::::::::::::::  todo el container menu :::::::::::::::::::::::::
+.container-group-menu {
+    //background: #0B0C0E;
+}
+
+//  *****************  menu UNO **************************
+$color-oficial:#1CCACD;
+$color-icono:#fff;
+$icon-app:#FFF;
+$color-icono-hover:red;
+.menu-uno {
+    background: #0B0C0E;
+    height: 30px;
+    // IZQUIERDA
+    .content-uno-iz {
+        .idioma {
+            color: $color-oficial;
+        }
+        .dropdown-menu {
+            padding: 0;
+            min-width: 0;
+            .dropdown-divider {
+                margin: 0;
+            }
+            .active {
+                background: $color-oficial;
+            }
+            a {
+                font-size: 12px;
+            }
+            a:hover {
+                background: $color-oficial;
+                color: #fff;
+            }
+        }
+        .nav-link {
+            padding: 0 1em;
+            font-size: 13px;
+            color: $color-oficial;
+            //font-family: 'Titillium Web', sans-serif;
+            .fa {
+                color: $color-icono;
+                &:hover {
+                    color: $color-icono-hover;
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+    // DERECHA
+    .content-uno-de {
+        display: none;
+        @include from(m) {
+            display: block;
+            .nav-link-app,
+            .p-1 {
+                color: $icon-app;
+            }
+            .nav-link {
+                font-size: 13px;
+                color: $color-oficial;
+                font-family: 'Titillium Web', sans-serif;
+                .fa {
+                    color: $color-icono;
+                }
+            }
+            .nav-link-reclamo {
+                @include to(800px) {
+                    display: none !important;
+                }
+            }
+        }
+    }
+}
+
+//  *****************  menu DOS **************************
+.menu-dos {
+    // IZQUIERDA
+    .content-dos-iz {
+        @include to(m) {
+            width: 40%;
+            //  padding: 0;           
+        }
+        svg {
+            .st0 {
+                fill: $color-icono;
+            }
+            .st1 {
+                fill: $color-oficial;
+            }
+        }
+        .img-logo {
+            height: 55px;
+            @include from(520px) {
+                //width: 10%;
+                height: 80px;
+            }
+        }
+    }
+    // MEDIO
+    .content-dos-medio {
+        .btn-buscar {
+            background: $color-oficial;
+            color: #fff;
+        }
+        //    width: 50%;
+        @include to(m) {
+            display: none;
+        }
+    }
+    // IZQUIERDA
+    .content-dos-de {
+        @include to(m) {
+            width: 60%;
+        }
+        .icon-search {
+            display: none;
+        }
+        .nav-link {
+            color: $color-icono;
+            font-size: 19px;
+            padding: 0 15px;
+            font-family: 'Titillium Web', sans-serif;
+            @include from(520px) {
+                padding: 0 25px;
+            }
+            @include from(l) {
+                font-size: 17px;
+                padding: 0 15px;
+                // display: flex;
+            }
+            .fa {
+                color: $color-oficial;
+            }
+        }
+        .text-carrito,
+        .text-login {
+            display: none;
+            @include from(l) {
+                //   display: block;
+                display: inline-flex;
+            }
+        }
+        .dropdown-toggle::after {
+            display: none;
+        }
+        .icon-search {
+            display: block;
+            @include from(m) {
+                display: none;
+            }
+        }
+        .dropdown-menu {
+            // padding: 0;        
+            min-width: 0;
+            margin-top: 12px;
+            margin-left: -154%;
+            @include fromTo(520px, l) {
+                margin-left: -71%;
+            }
+            .dropdown-divider {
+                margin: 0;
+            }
+            .active {
+                background: $color-oficial;
+            }
+            .dropdown-item {
+                padding: 3px 1.1rem;
+            }
+            a {
+                font-size: 12px;
+            }
+            a:hover {
+                background: $color-oficial;
+                color: #fff;
+            }
+        }
+    }
+}
+
+//  *****************  menu TRES **************************
+.menu-tres {
+    background: $color-oficial;
+    height: 50px;
+}
+
+.carousel-menu {
+    @include to(769px) {
+        display: none;
+    }
+}
+
+.carousel-icon {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.img-thumbnail {
+    padding: 0.8px 0.8px;
+    background-color: #fff;
+    border: 1px solid #fff8f8;
+    //border: px solid #fff;
+    border-radius: 0;
+}
+
+.main-section {
+    display: none;
+    @include to(769px) {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+
+.bg-image {
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    -webkit-background-size: cover !important;
+    background-size: cover !important;
+    z-index: 1;
+}
+
+.article {
+    box-shadow: inset 0px -180px 100px -50px rgba(0, 0, 0, 0.52);
+}
+
+.article-uno {
+    background: red;
+    padding: 0 1em;
+    height: 300px;
+    width: 100%;
+}
+
+.gallery {
+    @include to(769px) {
+        display: none;
+    }
+}
+
+.owl-stage-outer {}
+
+.owl-stage {
+    //transform: translate3d(180px, 0px, 0px);
+    //transition: 1.5s;
+    //width: 3100px !important;
+}
+
+// .main{
+//     margin: 0 auto;
+// }
+// .imagen{
+//     margin-top: 1em;
+//     img{
+//         border: 1px solid rgba(0, 163, 155,.1);
+//         width: 50%;
+//         box-shadow: 10px 5px 5px #00676C;
+//     }
+// }
+// .boton{
+//     margin: 1em 0;
+//     .btn-primary{    
+//         background: #fff;       
+//         border: 1px solid red;
+//         color: #00A39B;
+//         text-decoration: none;
+//         border: 1px solid #00A39B;
+//         border-radius: 0.2rem; 
+//         cursor: pointer;
+//         &:hover{            
+//             transition: .4s;
+//             background: darkcyan;
+//             color: #fff;
+//             border: 1px solid darkcyan; 
+//             box-shadow: 0 0 3em #74959c;   
+//         }
+//     }
+// }
+footer {
+    align-self: flex-end;
+    font-size: 12px;
+    background: #009688;
+    color: #fff;
+    line-height: 3;
+    text-align: center;
+    width: 100%;
+}
+
+.bx-wrapper {
+    //width: 100%;
+    //border: 10px solid white;
+    //-webkit-box-sizing: border-box;
+    //-moz-box-sizing: border-box;
+    //box-sizing: border-box;
+    //-webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    //-moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    //box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.bx-wrapper .bx-viewport {
+    //height: 10px !important;
+}
+
+.bx-wrapper li {
+    //margin-top: -16px !important;
+}
+
+//MENU **********************************
+$fondo-menu: #00ACAC;
+$categorias: #fff;
+$titulo-uno: red; //efecto hovewr
+//-------- MENU DE AMBURGUESA TOGGLE -------------
+.icon-toggle {
+    cursor: pointer;
+    font-size: 30px;
+    text-align: center;
+    color: $titulo-uno;
+    //        line-height: 22px;
+    margin-left: 15px;
+    @include from(480px) {
+        //            font-size: 30px;
+    }
+    &:hover {
+        box-shadow: 0 0 5px 5px;
+    }
+}
+
+//-------- NOMBRE CATEGORIA -------------
+.nombre-categoria {
+    margin: 0;
+    font-size: 15px;
+    display: none;
+    @include from(480px) {
+        display: block;
+    }
+}
+
+//LISTADO DE MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>::::::::::::::::::::::::::::::::::
+//LISTADO DE MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>::::::::::::::::::::::::::::::::::
+//LISTADO DE MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>::::::::::::::::::::::::::::::::::
+//LISTADO DE MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>::::::::::::::::::::::::::::::::::
+.menu {
+    .menu-content {
+        position: absolute;
+        margin: -15px;
+        padding-top: 20px;
+        display: none;
+    }
+    &:hover {
+        .menu-content {
+            display: block;
+        }
+    }
+}
+
+.main-menu {
+    //display: none;
+    background: $fondo-menu;
+    box-shadow: 0px 4px 3px rgba(0, 0, 0, .5);
+    line-height: 30px;
+    //width: 100%;
+    //margin: 1px 0;
+    //        border-left: 1px solid rgba(35, 38, 44,.2);
+    //        border-top: 1px solid rgba(35, 38, 44,.2);
+    //        border-right: 1px solid rgba(35, 38, 44,.2);
+    //        border-bottom: 1px solid rgba(35, 38, 44,.2);
+    //        outline: 1px solid rgba(0,0,0,.2);
+    //    background: red;
+    padding-left: 0;
+    //     background: $categorias;
+    @include to(769px) {
+        width: 15em;
+        margin: 3px 0;
+    }
+    @include to(480px) {
+        margin: 11px 0;
+    }
+    a {
+        display: block;
+        text-align: left;
+        text-decoration: none;
+        padding-left: 15px;
+        transition: 0.2s;
+        font-family: 'Josefin Sans', sans-serif;
+        //        background: $categorias;
+        color: $categorias;
+    }
+    li {
+        outline: 1px solid rgba(0, 0, 0, .1);
+        list-style: none;
+        @include from(m) {
+            box-shadow: 0 0 rgba(220, 217, 211, .9) inset;
+            outline: 1px solid rgba(0, 0, 0, .0);
+            border-bottom: 1px solid rgba(35, 38, 44, .2);
+        }
+        &:hover {
+            background: red;
+            .menu-titulo {
+                color: aliceblue;
+            }
+        }
+        .sub-menu-titulo {
+            color: $titulo-uno;
+            text-decoration: underline;
+        }
+    }
+}
+
+.sub-menu-ul {
+    list-style: none;
+    margin-bottom: 0;
+    padding: 0;
+    //    line-height: 30px;
+    a {
+        //color: #fff;
+        @include from(769px) {
+            display: block;
+            text-decoration: none;
+            width: 100%;
+            //text-align: left;
+            //transition: 1s;
+            font-family: 'Josefin Sans', sans-serif;
+            //            color: red;
+        }
+        &:hover {
+            //            color: darken(#4C4C4B,6);
+            color: $titulo-uno;
+            //box-shadow: 0 0 5px 5px;
+            text-shadow: 0 0 40px $titulo-uno;
+            text-decoration: underline;
+        }
+    }
+    li {
+        //        box-shadow: 0 !important;
+        //        outline: 1px solid red;
+        //padding-left: 1em;
+        outline: 1px solid rgba(0, 0, 0, .0);
+        border-bottom: 0px solid rgba(0, 0, 0, .0);
+        &:hover {
+            background: 0;
+        }
+    }
+}
+
+.sub-menu-content {
+    //display: none;
+    box-shadow: 0px 4px 3px rgba(0, 0, 0, .5);
+    top: 17px;
+    left: 10%;
+    height: auto;
+    overflow-y: auto;
+    //    z-index: -99999;
+    background: #4C4C4B;
+    //    width: 100% !important;
+    //    outline: 0px solid rgba(0,0,0,.1);
+    @include from(769px) {
+        margin-top: 3px;
+        position: absolute;
+        //        top: 0;
+        left: 25%;
+        max-width: 900px;
+        background: $fondo-menu;
+        outline: 1px solid rgba(0, 0, 0, .1);
+    }
+}
+
+.menu-seccion-texto {
+    width: 100%!important;
+    //    display: block;
+    @include from(969px) {
+        width: 50% !important;
+        display: flex;
+        //         outline: 1px solid red;
+    }
+}
+
+.menu-seccion-imagen {
+    display: none;
+    @include from(969px) {
+        display: flex;
+        //        outline: 1px solid red;
+    }
+}
+
+.tor {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.show-toggle {
+    display: block;
+}
+
+.btn-menu-categoria {
+    background: #131519;
+    color: #fff;
+    padding: .5em 1em;
+    cursor: pointer;
+    @include fromTo(640px, 748px) {
+        font-size: 13px;
+    }
+}
+
+.bxslider {
+    a {
+        color: #131519;
+    }
+}
+
+//.active { background-color: #000; }
+//::::::::::::::::::::: menu toggle :::::::::::::::::::::::::

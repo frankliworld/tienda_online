@@ -1,0 +1,968 @@
+$cssCore: false;
+$cssHelpers: true;
+$devMode: false;
+@import '../ed-grid';
+//Tipografias --------------------------------------------->
+@font-face {
+    font-family: 'Gotham Bold';
+    font-style: medium;
+    font-weight: 400;
+    src: local('Open Sans'), //        url(opensans.eot) format('embedded-opentype'),
+    url(../public/tipografic/GothamBold.otf) format('opentype'), //        url(opensans.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'GothamBook';
+    font-style: regular;
+    font-weight: 400;
+    src: local('Open Sans'), //        url(opensans.eot) format('embedded-opentype'),
+    url(../public/tipografic/GothamBook.otf) format('opentype'),
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    //background: #131519;
+    //display: flex;
+    //min-height: 100vh;
+    flex-wrap: wrap;
+    //font-family: Gotham Bold !important;
+}
+
+.header {
+    //background: #131519;
+    //height: 160px;
+}
+
+.padding-lr {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.padding-left {
+    padding-left: 0 !important;
+}
+
+.padding-right {
+    padding-right: 0 !important;
+}
+
+// :::::::::::::::::::::::  todo el container menu :::::::::::::::::::::::::
+.container-group-menu {
+    //background: #0B0C0E;
+}
+
+//Colores Generales---------------------------------------->
+$verde:#34dca2;
+$negro_1:#1A1A1A;
+$negro_2:#000000;
+$gris_1:#CCCCCC;
+$gris_2:#f8f8f8;
+$svg:#1a1a1a;
+//  *****************  menu UNO **************************
+$color-oficial:#1A1A1A;
+$color-icono:#fff;
+$icon-app:#FFF;
+$color-icono-hover:red;
+.menu-uno {
+    //    background: $gris_2;
+    border-bottom: 0.1px solid $gris_2;
+    height: 32px;
+    .cls-1 {
+        fill: $negro_1;
+        &:hover {
+            fill: red !important;
+        }
+    }
+    // IZQUIERDA *************************************
+    .content-uno-iz {
+        @include to(769px) {
+            width: 100%;
+        }
+        .idioma {
+            color: $verde;
+        }
+        .dropdown-menu {
+            padding: 0;
+            margin-top: 15px;
+            min-width: 0;
+            .dropdown-divider {
+                margin: 0;
+            }
+            .active {
+                background: $verde;
+            }
+            a {
+                font-size: 12px;
+            }
+            a:hover {
+                background: $verde;
+                color: #fff;
+            }
+        }
+        .dropdown-toggle::after {
+            color: $gris_1;
+        }
+        .nav-link {
+            padding: 0 8px;
+            font-size: 13px;
+            //color: $color-oficial;
+            line-height: 0;
+        }
+        .icon_facebook,
+        .icon_twiter,
+        .icon_instagran,
+        .icon_youtube,
+        .icon_whatsapp,
+        {
+            width: 20px;
+            height: 20px;
+            fill: red;
+            &:hover {
+                fill: $verde;
+            }
+        }
+    }
+    // DERECHA **********************************************
+    .content-uno-de {
+        display: none;
+        @include from(769px) {
+            display: block;
+            .nav-link-app,
+            .p-1 {
+                color: $icon-app;
+            }
+            .nav-link {
+                font-size: 13px;
+                color: $color-oficial;
+                font-family: 'Titillium Web', sans-serif;
+            }
+            .nav-link-comprador {
+                @include to(887px) {
+                    display: none !important;
+                }
+            }
+        }
+        .nav-item {
+            border-right: 1px solid $gris_2;
+            line-height: 1.4;
+        }
+        .icon_app {
+            width: 20px;
+            height: 20px;
+            .cls-1 {
+                fill: $verde;
+            }
+        }
+        .dropdown-menu {
+            padding: 0;
+            min-width: 0;
+            margin-left: -20px;
+            .dropdown-divider {
+                margin: 0;
+            }
+            .active {
+                background: $verde;
+            }
+            a {
+                font-size: 12px;
+            }
+            a:hover {
+                background: $verde;
+                color: #fff;
+            }
+        }
+        .dropdown-toggle::after {
+            color: $gris_1;
+        }
+    }
+}
+
+//  *****************  menu DOS **************************
+.menu-dos {
+    // IZQUIERDA
+    height: 52px;
+    .content-dos-iz {
+        @include to(m) {
+            width: 40%;
+            //  padding: 0;           
+        }
+        svg {
+            .cls-1 {
+                fill: #34dca2;
+            }
+            .cls-2 {
+                fill: #1a1a1a;
+            }
+        }
+        .img-logo {
+            width: 75%;
+            margin-left: 10px;
+            @include from(769px) {
+                width: 60%;
+                //                height: 80px;
+            }
+        }
+    }
+    // MEDIO
+    .content-dos-medio {
+        //    width: 50%;
+        @include to(769px) {
+            display: none;
+        }
+        .btn-buscar {
+            background: $verde;
+            color: #fff;
+        }
+        .dropdown-toggle {
+            background: $verde;
+            color: #fff;
+        }
+        .icon-cesta {
+            width: 20px;
+            height: 20px;
+            .cls-1 {
+                fill: #fff;
+            }
+        }
+    }
+    // DERECHA
+    .content-dos-de {
+        @include to(769px) {
+            width: 80%;
+        }
+        @include to(640px) {
+            width: 60%;
+        }
+        .cls-1 {
+            fill: $negro_1;
+        }
+        .icon-corazon {
+            .cls-1 {
+                fill: red;
+            }
+        }
+        .icon_buscador {
+            display: none !important;
+            @include to(769px) {
+                display: block !important;
+            }
+        }
+        .nav-item {
+            cursor: pointer;
+            display: flex;
+            padding: 0px 10px;
+            .icon-cesta {
+                margin-top: 10px;
+                //                margin-top: 20px;
+                //                margin: 0 10px;
+                width: 27px;
+                height: 27px;
+                @include to(572px) {
+                    width: 23px;
+                    height: 23px;
+                }
+                @include to(420px) {
+                    width: 19px;
+                    height: 19px;
+                }
+            }
+            .bande-afuera {
+                display: none;
+            }
+            @include to(1016px) {
+                padding: 0 1em;
+                margin-top: -5px;
+                .nav-link {
+                    display: none;
+                }
+                .punto {
+                    display: block;
+                    @include to(1016px) {
+                        margin-top: -7px;
+                    }
+                }
+                .bande-afuera {
+                    display: block;
+                    position: absolute;
+                    padding: 4px 8px;
+                    border-radius: 50%;
+                    background: $verde;
+                    //margin-top: -43px;
+                    margin-left: 15px;
+                }
+            }
+            //                @include to(769px) {
+            //                .nav-link {
+            //                    display: block;
+            //                }
+            //                .bande-afuera {
+            //                    display: none;
+            //                }
+            //            }
+            @include to(572px) {
+                padding: 0 15px;
+                .bande-afuera {
+                    //margin-top: -40px;
+                    margin-left: 14px;
+                }
+            }
+            @include to(420px) {
+                padding: 0 8px;
+                margin-left: 5px;
+                .bande-afuera {
+                    //margin-top: -38px;
+                    padding: 3px 6px;
+                    margin-left: 12px;
+                }
+            }
+            @include to(320px) {
+                padding: 0 7px;
+                margin-left: 0;
+                .bande-afuera {
+                    padding: 3px 6px;
+                    //margin-top: -38px;
+                    margin-left: 9px;
+                }
+            }
+        }
+        .nav-link {
+            color: $negro_2;
+            //            display: -webkit-inline-box;
+            //            display: -moz-inline-box;
+            //            display: flex;
+            //            padding-left: 5px;
+            //            padding: 1.5em 0px;
+            //            margin-top: 5px;
+            margin-top: 5px !important;
+            font-size: 12px;
+            padding: 0;
+            margin: 0;
+            .badge {
+                padding: 4px 10px;
+                border-radius: 40%;
+                background: $verde;
+            }
+            .icon-puntitos {
+                margin-top: 0px;
+                .cls-1 {
+                    fill: $verde;
+                }
+            }
+        }
+        .dropdown-menu {
+            padding: 0;
+            min-width: 0;
+            margin-left: -100px;
+            margin-top: 5px;
+            @include to(572px) {
+                margin-left: -108px;
+                margin-top: 1px;
+            }
+            @include to(420px) {
+                margin-top: 3px;
+            }
+            .dropdown-divider {
+                margin: 0;
+            }
+            .active {
+                background: $verde;
+            }
+            a {
+                font-size: 12px;
+            }
+            a:hover {
+                background: $verde;
+                color: #fff;
+            }
+        }
+        .dropdown-toggle::after {
+            color: $gris_1;
+        }
+    }
+}
+
+//  *****************  menu TRES **************************
+.menu-tres {
+    //        background: $color-oficial;
+    border-top: 1px solid $gris_2;
+    border-bottom: 1px solid $gris_2;
+    height: 50px;
+    @include to(769px) {
+        display: none;
+    }
+    .cls-1 {
+        fill: $gris_1;
+    }    
+}
+
+.btn-menu-categoria {
+    background: $gris_2;
+    //        color: #fff;
+    padding: .5em 0;
+    padding-right: 1em;
+    padding-left: 10px;
+    cursor: pointer;
+    font-family: Gotham Book;
+    .cls-1 {
+        fill: $verde;
+    }
+    @include fromTo(640px, 748px) {
+        font-size: 13px;
+    }
+    .icon-menu {
+        width: 30px;
+        height: 30px;
+        @include to(806px) {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+.carousel-menu {
+    .icon-carou {
+        width: 40px;
+        height: 30px;
+        margin-top: 3px;
+    }
+    .icon-carou-ho {
+        width: 30px;
+        height: 30px;
+        margin-top: 3px;
+    }
+    @include to(769px) {
+        display: none;
+    }
+}
+
+.bxslider {
+    a {
+        color: $negro_2;
+    }
+}
+
+.carousel-icon {
+    //font-family: 'Titillium Web', sans-serif;
+}
+
+.img-thumbnail {
+    padding: 0.8px 0.8px;
+    background-color: #fff;
+    border: 1px solid #fff8f8;
+    //border: px solid #fff;
+    border-radius: 0;
+}
+
+.main-section {
+    display: none;
+    @include to(769px) {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+
+.bg-image {
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    -webkit-background-size: cover !important;
+    background-size: cover !important;
+    z-index: 1;
+}
+
+.article {
+    box-shadow: inset 0px -180px 100px -50px rgba(0, 0, 0, 0.52);
+}
+
+.article-uno {
+    background: red;
+    padding: 0 1em;
+    height: 300px;
+    width: 100%;
+}
+
+.gallery {
+    @include to(769px) {
+        display: none;
+    }
+}
+
+// .main{
+//     margin: 0 auto;
+// }
+// .imagen{
+//     margin-top: 1em;
+//     img{
+//         border: 1px solid rgba(0, 163, 155,.1);
+//         width: 50%;
+//         box-shadow: 10px 5px 5px #00676C;
+//     }
+// }
+// .boton{
+//     margin: 1em 0;
+//     .btn-primary{    
+//         background: #fff;       
+//         border: 1px solid red;
+//         color: #00A39B;
+//         text-decoration: none;
+//         border: 1px solid #00A39B;
+//         border-radius: 0.2rem; 
+//         cursor: pointer;
+//         &:hover{            
+//             transition: .4s;
+//             background: darkcyan;
+//             color: #fff;
+//             border: 1px solid darkcyan; 
+//             box-shadow: 0 0 3em #74959c;   
+//         }
+//     }
+// }
+//footer {
+//    align-self: flex-end;
+//    font-size: 12px;
+//    background: #009688;
+//    color: #fff;
+//    line-height: 3;
+//    text-align: center;
+//    width: 100%;
+//}
+.bx-wrapper {
+    //width: 100%;
+    //border: 10px solid white;
+    //-webkit-box-sizing: border-box;
+    //-moz-box-sizing: border-box;
+    //box-sizing: border-box;
+    //-webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    //-moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    //box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+$verde:#34dca2;
+$negro_1:#1A1A1A;
+$negro_2:#000000;
+$gris_1:#CCCCCC;
+$gris_2:#f8f8f8;
+//****************** MENU Categoria WEB**********************************
+$fondo-menu: #fff;
+$categorias: #1A1A1A;
+$titulo-uno: #34dca2; //efecto hovewr
+//-------- MENU CATEOGRIA WEB -------------
+
+.icon-toggle {
+    cursor: pointer;
+    font-size: 30px;
+    text-align: center;
+    color: $titulo-uno;
+    //        line-height: 22px;
+    margin-left: 15px;
+    @include from(480px) {
+        //            font-size: 30px;
+    }
+    &:hover {
+        box-shadow: 0 0 5px 5px;
+    }
+}
+
+.menu {
+    .menu-content {
+        position: absolute;
+        
+        display: none;
+    }
+    &:hover {
+        .menu-content {
+            display: block;
+        }
+    }
+}
+
+.main-menu {
+    //display: none;
+    background: $fondo-menu;
+    box-shadow: 0px 4px 3px rgba(0, 0, 0, .5);
+    line-height: 35px;
+
+    //width: 100%;
+    //margin: 1px 0;
+    //        border-left: 1px solid rgba(35, 38, 44,.2);
+    //        border-top: 1px solid rgba(35, 38, 44,.2);
+    //        border-right: 1px solid rgba(35, 38, 44,.2);
+    //        border-bottom: 1px solid rgba(35, 38, 44,.2);
+    //        outline: 1px solid rgba(0,0,0,.2);
+    //    background: red;
+    padding-left: 0;
+    //     background: $categorias;
+    .icon-menu-verti{
+        //margin-top: 10px;       
+        //width: 35px;
+       width: 20px;
+       height: 20px;
+
+       fill: red !important;
+       
+
+
+    }
+
+
+    
+    @include to(769px) {
+        width: 15em;
+        margin: 3px 0;
+    }
+    @include to(480px) {
+        margin: 11px 0;
+    }
+    a {
+        display: block;        
+        text-align: left;
+        text-decoration: none;
+        padding-left: 15px;
+        transition: 0.2s;
+        font-family: 'Josefin Sans', sans-serif;
+        //        background: $categorias;
+        color: $categorias;
+    }
+    li {
+        outline: 1px solid rgba(0, 0, 0, .1);
+        list-style: none;
+        @include from(m) {
+            box-shadow: 0 0 rgba(220, 217, 211, .9) inset;
+            outline: 1px solid rgba(0, 0, 0, .0);
+            border-bottom: 1px solid rgba(35, 38, 44, .2);
+        }
+        &:hover {
+            background: #34dca2;
+            .menu-titulo {
+                color: aliceblue;
+            }
+        }
+        .sub-menu-titulo {
+            color: $titulo-uno;
+            text-decoration: underline;
+        }
+    }
+}
+
+.sub-menu-ul {
+    list-style: none;
+    margin-bottom: 0;
+    padding: 0;
+    //    line-height: 30px;
+    a {
+        //color: #fff;
+        @include from(769px) {
+            display: block;
+            text-decoration: none;
+            width: 100%;
+            //text-align: left;
+            //transition: 1s;
+            font-family: 'Josefin Sans', sans-serif;
+            //            color: red;
+        }
+        &:hover {
+            //            color: darken(#4C4C4B,6);
+            color: $titulo-uno;
+            //box-shadow: 0 0 5px 5px;
+            text-shadow: 0 0 40px $titulo-uno;
+            text-decoration: underline;
+        }
+    }
+    li {
+        //        box-shadow: 0 !important;
+        //        outline: 1px solid red;
+        //padding-left: 1em;
+        outline: 1px solid rgba(0, 0, 0, .0);
+        border-bottom: 0px solid rgba(0, 0, 0, .0);
+        &:hover {
+            background: 0;
+        }
+    }
+}
+
+.sub-menu-content {
+    display: none;
+    box-shadow: 0px 4px 3px rgba(0, 0, 0, .5);
+    top: 0px;
+    //left: 10%;
+    height: auto;
+    overflow-y: auto;
+    //    z-index: -99999;
+    background: #4C4C4B;
+    //    width: 100% !important;
+    //    outline: 0px solid rgba(0,0,0,.1);
+    @include from(769px) {
+        //margin-top: 3px;
+        position: absolute;
+        //        top: 0;
+        left: 25%;
+        max-width: 900px;
+        background: $fondo-menu;
+        outline: 1px solid rgba(0, 0, 0, .1);
+    }
+}
+
+.menu-seccion-texto {
+    width: 100%!important;
+    //    display: block;
+    @include from(969px) {
+        width: 50% !important;
+        display: flex;
+        //         outline: 1px solid red;
+    }
+}
+
+.menu-seccion-imagen {
+    display: none;
+    @include from(969px) {
+        display: flex;
+        //        outline: 1px solid red;
+    }
+}
+
+.tor {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.show-toggle {
+    display: block;
+}
+
+//.active { background-color: #000; }
+// *********************************** MENU CUATRO **************************************
+//::::::::::::::::::::: menu MOVIL :::::::::::::::::::::::::
+#stike {
+    //width: 88%;
+}
+
+@media screen and (min-width: 769px) {
+    .menu_bar {
+        display: none;
+    }
+    .menu-cuatro {
+        display: none;
+    }
+}
+
+.menu-cuatro {
+    //display: none;
+    nav {
+        background: #023859;
+        z-index: 1000;
+        max-width: 1000px;
+        width: 95%;
+        margin: 20px auto;
+    }
+    nav ul {
+        list-style: none;
+    }
+    nav ul li {
+        display: inline-block;
+        position: relative;
+    }
+    nav ul li:hover {
+        background: #1CCACD;
+    }
+    nav ul li a {
+        color: #fff;
+        display: block;
+        text-decoration: none;
+        padding: 20px;
+    }
+    nav ul li a span {
+        margin-right: 10px;
+    }
+    nav ul li:hover .children {
+        display: block;
+    }
+    nav ul li .children {
+        display: none;
+        background: #011826;
+        position: absolute;
+        width: 150%;
+        z-index: 1000;
+    }
+    nav ul li .children li {
+        display: block;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(255, 255, 255, .5);
+    }
+    nav ul li .children li a {
+        display: block;
+    }
+    nav ul li .children li a span {
+        float: right;
+        position: relative;
+        top: 3px;
+        margin-right: 0;
+        margin-left: 10px;
+    }
+    nav ul li .caret {
+        position: relative;
+        top: 3px;
+        margin-left: 10px;
+        margin-right: 0px;
+    }
+}
+
+@media screen and (max-width: 769px) {
+    body {
+        //padding-top: 80px;
+    }
+    .menu_bar {
+        display: block;
+        width: 100%;
+        position: relative;
+        //top: 10px;
+        background: #1CCACD;
+        .bt-menu {
+            display: block;
+            padding: 10px;
+            color: #fff;
+            overflow: hidden;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            text-align: center;
+        }
+        span {
+            //float: right;
+            float: left;
+            font-size: 30px;
+        }
+    }
+    .menu-cuatro {
+        nav {
+            width: 80%;
+            height: calc(100% - 80px);
+            position: absolute;
+            top: 8.5em;
+            right: 100%;
+            margin: 0;
+            overflow: scroll;
+            ul {
+                padding: 0;
+                li {
+                    display: block;
+                    border-bottom: 1px solid rgba(255, 255, 255, .5);
+                    text-align: left;
+                    .children {
+                        width: 100%;
+                        position: relative;
+                        li {
+                            a {
+                                margin-left: 20px;
+                            }
+                        }
+                    }
+                    .caret {
+                        float: right;
+                    }
+                    &:hover {
+                        .children {
+                            display: none;
+                        }
+                    }
+                    a {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//**************************** CAROUSEL  TIPO GALLERY  *************************************
+.carousel-control-next,
+.carousel-control-prev {
+    position: absolute;
+    background: rgba(255, 255, 255, .4);
+    height: 55px;
+    width: 5%;
+    margin-left: 1em;
+    top: 43% !important;
+    //bottom: 55% !important;
+    //    top: 50%;
+    //    display: none;
+}
+
+.carousel-control-next {
+    margin-right: 1em;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    //    display: none;
+    padding: 1em;
+    margin-left: 5px;
+    //background-color: red;
+    //margin: 2em;    
+}
+
+//****** responsive carousel****************
+.carousel-general-x1 {}
+
+.carousel-inner {
+    .carousel-general-x1 {
+        @include to(730px) {
+            display: none;
+        }
+    }
+    .carousel-general-x2 {
+        @include to(750px) {
+            width: 50%;
+        }
+    }
+    .carousel-general-x3 {
+        @include to(750px) {
+            width: 50%;
+        }
+    }
+}
+
+.carousel-inner {
+    .carousel-subc-x1 {
+        @include to(900px) {
+            width: 100%;
+        }
+    }
+    .carousel-subc-x2 {
+        @include to(900px) {
+            display: none;
+        }
+    }
+}
+
+//@media screen and (max-width: 899px) {
+//    .carousel-subc-x2 {
+//        display: none;
+//    }
+//}
+.carousel-general-x3 {}
+
+.carousel-inner {
+    //width: 50% !important;
+}
+
+//.carousel {
+//    height: 66.67%;
+//    margin-bottom: 0;
+//}
+//.carousel-inner,
+//.carousel-inner>.item,
+//.carousel-inner>.item>img {
+//    height: 50% !important;
+//}
+.ed-item {
+    @include from(2177px) {
+        .menu-tres {
+            //width: 0%;
+            position: static;
+        }
+    }
+}

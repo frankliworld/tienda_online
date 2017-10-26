@@ -1,0 +1,167 @@
+/*SOLO CON ESTOS ESTILOS SE LOGRA EL EFECTO*/
+
+input {
+  display: none
+}
+
+label::after {
+  content: attr(for)
+}
+
+#morado:checked ~ img {
+  -webkit-filter: hue-rotate(45deg);
+          filter: hue-rotate(45deg);
+}
+
+#azulcyan:checked ~ img {
+  -webkit-filter: hue-rotate(-54deg);
+          filter: hue-rotate(-54deg);
+}
+
+#verde:checked ~ img {
+  -webkit-filter: hue-rotate(280deg);
+          filter: hue-rotate(280deg);
+}
+
+#azulcielo:checked ~ img {
+  -webkit-filter: hue-rotate(-10deg);
+          filter: hue-rotate(-10deg);
+}
+
+#fresa:checked ~ img {
+  -webkit-filter: hue-rotate(100deg);
+          filter: hue-rotate(100deg);
+}
+
+#cafe:checked ~ img {
+  -webkit-filter: hue-rotate(180deg) saturate(1.8);
+          filter: hue-rotate(180deg) saturate(1.8);
+}
+
+#gris:checked ~ img {
+  -webkit-filter: saturate(0);
+          filter: saturate(0);
+}
+
+
+
+
+
+/*ESTILOS SON MAS DECORATIVOS QUE FUNCIONALES*/
+
+* {
+  box-sizing: border-box;
+  text-align: center;
+}
+
+
+input[name="color"]:checked ~ img {
+  -webkit-animation-name: none;
+          animation-name: none;
+}
+
+label {
+  display: inline-block;
+  padding: 1rem;
+  -webkit-transition: all linear .3s;
+  transition: all linear .3s;
+  border: solid whitesmoke 0.1rem;
+}
+
+label::before {
+  content: '';
+  display: inline-block;
+  width: 1rem;
+  height: 0.8rem;
+  margin-right: 0.5rem;
+}
+
+label:hover {
+  letter-spacing: 0.25rem;
+}
+
+pre {
+  display: inline-block;
+  padding: 0.5rem;
+}
+
+img {
+  -webkit-animation: color 10s linear infinite;
+          animation: color 10s linear infinite;
+  display: block;
+  margin: auto;
+  max-width: 450px;
+  height: auto
+}
+
+a,
+a:link,
+a:visited {
+  color: darkcyan;
+  text-decoration: none;
+  border: 0.1rem solid;
+  border-radius: 0.2rem;
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+[for="morado"]::before {
+  background: rgb(160, 50, 215);
+}
+
+[for="azulcyan"]::before {
+  background: rgb(0, 150, 150);
+}
+
+[for="verde"]::before {
+  background: rgb(0, 150, 50);
+}
+
+[for="azul"]::before {
+  background: rgb(50, 100, 200);
+}
+
+[for="fresa"]::before {
+  background: rgb(200, 50, 100);
+}
+
+[for="cafe"]::before {
+  background: rgb(150, 100, 70);
+}
+
+[for="gris"]::before {
+  background: rgb(100, 100, 100);
+}
+
+#morado:checked ~ [for="morado"],
+#azulcyan:checked ~ [for="azulcyan"],
+#verde:checked ~ [for="verde"],
+#azul:checked ~ [for="azul"],
+#fresa:checked ~ [for="fresa"],
+#cafe:checked ~ [for="cafe"],
+#gris:checked ~ [for="gris"] {
+  border: solid lightgray 0.1rem;
+}
+
+@-webkit-keyframes color {
+  0% {
+    -webkit-filter: hue-rotate(0deg);
+            filter: hue-rotate(0deg)
+  }
+  100% {
+    -webkit-filter: hue-rotate(360deg);
+            filter: hue-rotate(360deg)
+  }
+}
+
+@keyframes color {
+  0% {
+    -webkit-filter: hue-rotate(0deg);
+            filter: hue-rotate(0deg)
+  }
+  100% {
+    -webkit-filter: hue-rotate(360deg);
+            filter: hue-rotate(360deg)
+  }
+}
